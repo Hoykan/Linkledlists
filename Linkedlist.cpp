@@ -62,8 +62,30 @@ public:
 		}
 		cout << endl;
 	}
+	void deletelastnode() {
+		if (count == 0)
+			return;
+		Node* temp1 = head;
+		Node* temp2 = head;
+		while (temp1->next) {
+			temp2 = temp1;
+			temp1 = temp1->next;
+			
+		}
+		tail = temp2;
+		tail->next = NULL;
+		count--;
+		if (count == 0) {
+			head = NULL;
+			tail = NULL;
+
+		}
+		delete temp1;
+	}
+	void firstnode(int deger) {
 };
 int main() {
+	cout << "------------------------------" << endl;
 	linkedlist* linkedlist1 = new linkedlist(1);
 	linkedlist1->appentlist(2);
 	linkedlist1->appentlist(3);
@@ -73,5 +95,13 @@ int main() {
 	linkedlist1->printhead();//1
 	linkedlist1->printtail();//5
 	linkedlist1->printlist();// 1-2-3-4-5 
+	cout << "------------------------------" << endl;
+	linkedlist1->deletelastnode();
+	linkedlist1->deletelastnode(); //2 kere silme yapýldý
+	linkedlist1->getcount();//3
+	linkedlist1->printhead();//1
+	linkedlist1->printtail();//3
+	linkedlist1->printlist();// 1-2-3
+	cout << "------------------------------" << endl;
 	}
 	
