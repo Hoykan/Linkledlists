@@ -83,7 +83,7 @@ public:
 		delete temp1;
 	}
 	void firstnode(int deger) {
-		wepgkpweg
+		
 };
 int main() {
 	cout << "------------------------------" << endl;
